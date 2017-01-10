@@ -87,7 +87,8 @@ try
     LOG(NOTICE, "Connecting to %s",
         optionParser.options.getCoordinatorLocator().c_str());
 
-    RamCloud client(&optionParser.options);
+    RamCloud client(optionParser.options.getCoordinatorLocator().c_str());
+//    RamCloud client(&optionParser.options);
 
     uint64_t tableId;
     tableId = client.createTable(tableName.c_str(), serverSpan);
