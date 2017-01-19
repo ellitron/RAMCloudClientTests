@@ -22,7 +22,6 @@
 #include <fstream>
 
 #include "ClusterMetrics.h"
-#include "Context.h"
 #include "Cycles.h"
 #include "Dispatch.h"
 #include "ShortMacros.h"
@@ -50,9 +49,6 @@ try
     // Set line buffering for stdout so that printf's and log messages
     // interleave properly.
     setvbuf(stdout, NULL, _IOLBF, 1024);
-
-    // need external context to set log levels with OptionParser
-    Context context(false);
 
     OptionsDescription clientOptions("TransactionsTestCase");
     clientOptions.add_options()
