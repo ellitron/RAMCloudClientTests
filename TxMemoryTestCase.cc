@@ -104,7 +104,7 @@ try
     tx.commit();
 
     for(int i = 0; i < txCount; i++ ) {
-      LOG(NOTICE, "Executing transaction %d\n", i);
+      printf("Executing transaction %d\n", i);
 
       Transaction tx(&client);
 
@@ -125,7 +125,7 @@ try
 
     client.dropTable(tableName.c_str());
 
-    LOG(NOTICE, "Test passed.");
+    printf("Test passed.\n");
 
     return 0;
 } catch (RAMCloud::ClientException& e) {
